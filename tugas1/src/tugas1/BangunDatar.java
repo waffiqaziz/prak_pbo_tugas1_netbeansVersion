@@ -4,7 +4,7 @@ public abstract class BangunDatar {
   int x;
   int y;
   // x & y bisa berupa alas, panjang, tinggi maupun sisi bangun datar
-
+  
   public BangunDatar(int x, int y) { // untuk bangun datar segitiga, persegi panjang
     this.x = x;
     this.y = y;

@@ -27,5 +27,4 @@ public abstract class BangunRuang {
     System.out.println("Luas Permukaan " + namaBangunRuang + "\t: " + luas());
     System.out.println("Volume " + namaBangunRuang + "\t\t: " + volume());
   }
-
 }
