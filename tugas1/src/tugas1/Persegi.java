@@ -6,6 +6,11 @@ public class Persegi extends BangunDatar {
     super(x);
     // x = sisi persegi
   }
+  
+  // setter
+  public void setPersegi(int x){
+    this.x = x;
+  }
 
   @Override
   double luas() {

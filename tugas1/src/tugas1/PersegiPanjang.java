@@ -5,6 +5,12 @@ public class PersegiPanjang extends BangunDatar {
     super(x, y);
     // x = lebar, y = panjang
   }
+  
+  // setter
+  public void setPersegiPanjang(int x, int y){
+    this.x = x;
+    this.y = y;
+  };
 
   @Override
   double luas() {

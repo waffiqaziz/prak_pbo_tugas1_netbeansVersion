@@ -7,6 +7,11 @@ public class Kubus extends BangunRuang {
     // x = sisi
   }
 
+  // setter
+  public void setKubus(int x){
+    this.x = x;
+  }
+  
   @Override
   double luas() {
     return 6 * x * x;

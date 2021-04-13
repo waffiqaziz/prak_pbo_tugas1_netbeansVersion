@@ -1,10 +1,8 @@
 package tugas1;
+// @author WAFFIQ AZIZ / 123190070
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
-/**
- *
- * @author Waffiq Aziz
- */
 
 /* GUIDE 
   PILIHAN MENU :
@@ -24,16 +22,23 @@ import java.util.Scanner;
       volume kubus = 
       luas permukaan kubus =
 */
+
 public class Tugas1 {
 
-  /**
-   * @param args the command line arguments
-   */
-   public static void main(String[] args) {
+  public static void main(String[] args) {
     int pilihan = 0;
-    int x, y, z;
+    int x = 0, y = 0, z = 0;
     BangunDatar segitiga1, persegi1, persegiPanjang1, lingkaran1;
     BangunRuang kubus1, balok1, silinder1;
+
+    // inisialisasi semua bangun datar dan bangun ruang;
+    segitiga1 = new Segitiga(x, y);
+    persegi1 = new Persegi(x);
+    persegiPanjang1 = new PersegiPanjang(x, y);
+    lingkaran1 = new Lingkaran(x);
+    kubus1 = new Kubus(x);
+    balok1 = new Balok(x, y, z);
+    silinder1 = new Silinder(x, y);
 
     do {
       CLC();
@@ -50,14 +55,14 @@ public class Tugas1 {
       case 1: // SEGITIGA
         x = getUserInput("Alas segitiga\t: ");
         y = getUserInput("Tinggi segitiga\t: ");
-        segitiga1 = new Segitiga(x, y);
+        ((Segitiga) segitiga1).setSegitiga(x, y);
 
         hasil("SEGITIGA SIKU SIKU");
         segitiga1.display("Segitiga");
         break;
       case 2: // PERSEGI
         x = getUserInput("Sisi Persegi\t: ");
-        persegi1 = new Persegi(x);
+        ((Persegi) persegi1).setPersegi(x);
 
         hasil("PERSEGI");
         persegi1.display("Persegi");
@@ -65,22 +70,22 @@ public class Tugas1 {
       case 3: // PERSEGI PANJANG
         x = getUserInput("Lebar persegi panjang\t: ");
         y = getUserInput("Panjang persegi panjang\t: ");
-        persegiPanjang1 = new PersegiPanjang(x, y);
+        ((PersegiPanjang) persegiPanjang1).setPersegiPanjang(x, y);
 
         hasil("PERSEGI PANJANG");
         persegiPanjang1.display("Persegi Panjang");
         break;
       case 4: // LINGKARAN
         x = getUserInput("Jari-jari lingkaran\t: ");
-        lingkaran1 = new Lingkaran(x);
+        ((Lingkaran) lingkaran1).setLingkaran(x);
 
         hasil("LINGKARAN");
         lingkaran1.display("Lingkaran");
         break;
       case 5: // KUBUS
         x = getUserInput("Sisi kubus\t: ");
-        kubus1 = new Kubus(x);
-        persegi1 = new Persegi(x);
+        ((Kubus) kubus1).setKubus(x);
+        ((Persegi) persegi1).setPersegi(x);
 
         hasil("KUBUS");
         persegi1.display("Persegi");
@@ -90,21 +95,21 @@ public class Tugas1 {
         x = getUserInput("Lebar balok\t: ");
         y = getUserInput("Panjang balok\t: ");
         z = getUserInput("Tinggi balok\t: ");
-        balok1 = new Balok(x, y, z);
+        ((Balok) balok1).setBalok(x, y, z);
 
         hasil("BALOK");
-        persegiPanjang1 = new PersegiPanjang(x, y);
+        ((PersegiPanjang) persegiPanjang1).setPersegiPanjang(x, y);
         persegiPanjang1.display("Persegi Panjang 1");
-        persegiPanjang1 = new PersegiPanjang(x, z);
+        ((PersegiPanjang) persegiPanjang1).setPersegiPanjang(x, z);
         persegiPanjang1.display("Persegi Panjang 2");
-        persegiPanjang1 = new PersegiPanjang(z, y);
+        ((PersegiPanjang) persegiPanjang1).setPersegiPanjang(z, y);
         persegiPanjang1.display("Persegi Panjang 3");
         balok1.display("Balok\t");
         break;
       case 7: // SILINDER
         x = getUserInput("Jari-jari silinder\t: ");
         y = getUserInput("Tinggi silinder\t\t: ");
-        silinder1 = new Silinder(x, y);
+        ((Silinder) silinder1).setSilinder(x, y);
 
         hasil("SILINDER");
         silinder1.display(" ");
@@ -150,5 +155,4 @@ public class Tugas1 {
   private static void hasil(String namaBangun) {
     System.out.println("\n-----HASIL PERHITUNGAN " + namaBangun + "-----");
   }
-  
 }

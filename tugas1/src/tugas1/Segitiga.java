@@ -6,6 +6,12 @@ public class Segitiga extends BangunDatar {
     super(x, y);
     // x = alas, y = tinggi
   }
+  
+  // setter
+  public void setSegitiga(int x, int y){
+    this.x = x;
+    this.y = y;
+  }
 
   @Override
   double luas() {
